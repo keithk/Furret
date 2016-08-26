@@ -34,7 +34,7 @@ $(function() {
 
         canvas.add(oImg).renderAll();
         var a = canvas.setActiveObject(oImg);
-        var dataURL = canvas.toDataURL({format: 'png', quality: 0.8});
+        var dataURL = canvas.toDataURL({format: 'png'});
       });
     };
     reader.readAsDataURL(file);
