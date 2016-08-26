@@ -3,25 +3,21 @@
   <head>
     <title>Pokémon Test</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles.css">
   </head>
   <body>
     <div class="container-fluid">
       <div class='row'>
       <div class='col-md-4'>
         <h1>Pokémon Stickers</h1>
-        <p>Add Pokémon to any picture 💖 </p>
-        <h3>Steps</h3>
-        <ol>
-          <li> Choose Photo</li>
-          <li> Click to add Pokemon</li>
-          <li> Save to your computer</li>
-        </ol>
-        <p><span class='label label-warning'>Note</span> There is a height/width limit of <strong>700x700</strong>.</p>
+        <p>Add Pokémon to any picture.</p>
+        <p>Made with 💖 by <a href='http://twitter.com/keithkurson'>@keithkurson</a></p>
       </div>
       <div class='col-sm-4'>
         <h3>Upload Image</h3>
-        <input type="file" id="file">
+        <label class="btn btn-primary">
+                Browse&hellip; <input type="file" style="display: none;">
+        </label>
       </div>
       <div class='col-sm-4'>
         <h3>Download!</h3>
@@ -29,16 +25,16 @@
       </div>
     </div>
     <div class='row'>
-      <div class='col-md-6 col-sm-12'>
+      <div class='col-md-12 col-sm-12'>
         <div class="canvas__container">
-          <canvas id="c" width="400" height="300" class="canvas__canvas"></canvas>
+          <canvas id="c" width="800" height="400" class="canvas__canvas"></canvas>
           <img src="" id="mirror" class="canvas__mirror" />
         </div>
       </div>
-      <div class='col-md-5 col-sm-12'>
-        <div id="sprites"></div>
-      </div>
     </div>
+  </div>
+  <div id='bottom'>
+    <div id="sprites"></div>
   </div>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.6.3/fabric.js"></script>

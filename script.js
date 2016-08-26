@@ -5,6 +5,8 @@ $(function() {
   // Set some boundries on what the user can put in the canvas, because it resizes
   var maxWidth = 700;
   var maxHeight = 700;
+  // What filetype are we getting in /images/ ?
+  var fileType = 'png';
 
   // When the user uploads an image, displays it in the canvas
   $('#file').on('change', function(e) {
@@ -46,7 +48,7 @@ $(function() {
     canvas.renderAll();
     var image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
     $('.save').attr({
-      'download': 'pokemon.png',  /// set filename
+      'download': 'saved.png',  /// set filename
       'href'    : image              /// set data-uri
     });
   });
@@ -54,7 +56,7 @@ $(function() {
   // Clicking on a sprite applies it to the canvas
   $('#sprites').on('click', '.sprite', function() {
     var id = $(this).attr('data-id');
-    var file = 'images/' + id + '.png';
+    var file = 'images/' + id + '.'+fileType;
     fabric.Image.fromURL(file, function (img) {
       var oImg = img.set({left: 0, top: 0, angle: 00,width:img.width, height:img.height});
       oImg.hasBorder = false;
@@ -68,6 +70,6 @@ $(function() {
   // Build out the list of sprites
   var sprites = 493; // Number of sprites in the /images folder
   for (i = 1; i <= sprites; i++) {
-    $('#sprites').append("<img src='images/"+i+".png' class='sprite' data-id='"+i+"'>");
+    $('#sprites').append("<img src='images/"+i+"."+ fileType +"' class='sprite' data-id='"+i+"'>");
   }
 });
