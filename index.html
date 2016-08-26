@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pokémon Test</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class='col-md-12'>
+        <h1>Pokemon Thing</h1>
+        <p>Some explination text about what this does.</p>
+        <h3>Steps</h3>
+        <ol>
+          <li> Choose Selfie</li>
+          <li> Add Pokemon</li>
+          <li> Save to your computer</li>
+        </ol>
+      </div>
+      <div class='col-md-6 col-sm-12'>
+        <div class="canvas__container">
+          <canvas id="c" width="400" height="300" class="canvas__canvas"></canvas>
+          <img src="" id="mirror" class="canvas__mirror" />
+        </div>
+        <br>
+        <div class='row'>
+          <div class='col-sm-6'>
+            <h3>Choose Selfie</h3>
+            <input type="file" id="file">
+          </div>
+          <div class='col-sm-6'>
+            <h3>Download!</h3>
+            <button href="#" class="btn btn-primary button save" id="btn-download">Download</button>
+          </div>
+        </div>
+      </div>
+      <div class='col-md-6 col-sm-12'>
+        <div id="pokemon"></div>
+      </div>
+    </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.6.3/fabric.js"></script>
+    <script type="text/javascript" src="poke.js"></script>
+  </body>
+</html>

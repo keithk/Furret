@@ -1,0 +1,16 @@
+.canvas__container {
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+.canvas__canvas {
+  position: relative;
+  z-index: 1;
+}
+.canvas__mirror {
+  height: 300px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 400px;
+}
