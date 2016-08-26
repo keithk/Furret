@@ -4,6 +4,10 @@
   border: 1px solid #eee;
 }
 
+.generator-container {
+  margin-bottom: 125px;
+}
+
 #bottom {
   position:fixed;
   left:0px;
