@@ -6,6 +6,7 @@
 .canvas__canvas {
   position: relative;
   z-index: 1;
+  border: 0px;
 }
 .canvas__mirror {
   height: 300px;
@@ -13,4 +14,10 @@
   position: absolute;
   top: 0;
   width: 400px;
+  border: 0px;
+}
+
+#pokemon {
+  max-height: 700px;
+  overflow-y: scroll;
 }

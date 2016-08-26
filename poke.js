@@ -3,13 +3,22 @@ $(function() {
   document.getElementById('file').addEventListener("change", function (e) {
     var file = e.target.files[0];
     var reader = new FileReader();
+
     reader.onload = function (f) {
       var data = f.target.result;
       fabric.Image.fromURL(data, function (img) {
+        var maxWidth = 700;
+        var maxHeight = 700;
+        var width = (img.width > maxWidth) ? maxWidth : img.width;
+        var height = (img.height > maxWidth) ? maxHeight : img.height;
+
         var oImg = img.set({top: 0,
           left: 0,
-          scaleY: canvas.height / img.height,
-          scaleX: canvas.width / img.width});
+          height: height,
+          width: width});
+        canvas.setWidth(height);
+        canvas.setHeight(width);
+
         oImg.hasControls = false;
         oImg.selectable = false;
         canvas.add(oImg).renderAll();
