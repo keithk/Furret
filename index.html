@@ -8,28 +8,26 @@
   <body>
     <div class="container-fluid">
       <div class='row'>
-      <div class='col-md-4'>
+      <div class='col-xs-12 col-md-4 col-sm-12'>
         <h1>Pokémon Stickers</h1>
-        <p>Add Pokémon to any picture.</p>
+        <p>Add Pokémon to any picture. You can resize and move them around 🎉!</p>
         <p>Made with 💖 by <a href='http://twitter.com/keithkurson'>@keithkurson</a></p>
       </div>
-      <div class='col-sm-4'>
+      <div class='col-xs-6 col-sm-6 col-md-4'>
         <h3>Upload Image</h3>
         <label class="btn btn-primary">
                 Browse&hellip; <input type="file" style="display: none;">
         </label>
       </div>
-      <div class='col-sm-4'>
+      <div class='col-xs-6 col-sm-6 col-md-4'>
         <h3>Download!</h3>
         <a href="#" class="btn btn-primary button save" id="btn-download">Download</a>
       </div>
     </div>
+    <hr>
     <div class='row'>
-      <div class='col-md-12 col-sm-12'>
-        <div class="canvas__container">
-          <canvas id="c" width="800" height="400" class="canvas__canvas"></canvas>
-          <img src="" id="mirror" class="canvas__mirror" />
-        </div>
+      <div class='col-xs-12 col-md-12 col-sm-12'>
+          <canvas id="c" width="400" height="400" class="canvas"></canvas>
       </div>
     </div>
   </div>
