@@ -1,5 +1,6 @@
 .canvas__container {
   height: 100%;
+  max-width: 700px;
   position: relative;
   width: 100%;
 }

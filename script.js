@@ -1,14 +1,19 @@
 $(function() {
+  // Builds a canvas with fabric
   var canvas = new fabric.Canvas('c');
-  document.getElementById('file').addEventListener("change", function (e) {
+
+  // Set some boundries on what the user can put in the canvas, because it resizes
+  var maxWidth = 700;
+  var maxHeight = 700;
+
+  // When the user uploads an image, displays it in the canvas
+  $('#file').on('change', function(e) {
     var file = e.target.files[0];
     var reader = new FileReader();
 
     reader.onload = function (f) {
       var data = f.target.result;
       fabric.Image.fromURL(data, function (img) {
-        var maxWidth = 700;
-        var maxHeight = 700;
         var width = (img.width > maxWidth) ? maxWidth : img.width;
         var height = (img.height > maxWidth) ? maxHeight : img.height;
 
@@ -16,11 +21,15 @@ $(function() {
           left: 0,
           height: height,
           width: width});
+
+        // Changing the size of the canvas based on the image.
         canvas.setWidth(height);
         canvas.setHeight(width);
 
+        // You shouldn't be able to move or select the bottom layer (the uploaded image)
         oImg.hasControls = false;
         oImg.selectable = false;
+
         canvas.add(oImg).renderAll();
         var a = canvas.setActiveObject(oImg);
         var dataURL = canvas.toDataURL({format: 'png', quality: 0.8});
@@ -29,8 +38,10 @@ $(function() {
     reader.readAsDataURL(file);
   });
 
-  var button = document.getElementById('btn-download');
-  button.addEventListener('click', function (e) {
+
+  // The download button - when you click it, it applies the value of the canvas into an image.
+  var downloadButton = $('#btn-download');
+  downloadButton.on('click', function(e) {
     canvas.discardActiveObject();
     canvas.renderAll();
     var image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
@@ -40,9 +51,10 @@ $(function() {
     });
   });
 
-  $('#pokemon').on('click', '.sprite', function() {
+  // Clicking on a sprite applies it to the canvas
+  $('#sprites').on('click', '.sprite', function() {
     var id = $(this).attr('data-id');
-    var file = 'pokemon/' + id + '.png';
+    var file = 'images/' + id + '.png';
     fabric.Image.fromURL(file, function (img) {
       var oImg = img.set({left: 0, top: 0, angle: 00,width:img.width, height:img.height});
       oImg.hasBorder = false;
@@ -52,8 +64,10 @@ $(function() {
     });
   });
 
-  var pokemon = 493; // Maximum number of pokemon
-  for (i = 1; i <= pokemon; i++) {
-    $('#pokemon').append("<img src='pokemon/"+i+".png' class='sprite' data-id='"+i+"'>");
+
+  // Build out the list of sprites
+  var sprites = 493; // Number of sprites in the /images folder
+  for (i = 1; i <= sprites; i++) {
+    $('#sprites').append("<img src='images/"+i+".png' class='sprite' data-id='"+i+"'>");
   }
 });
