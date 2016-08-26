@@ -6,23 +6,17 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <div class="container">
+    <div class="container-fluid">
       <div class='col-md-12'>
-        <h1>Pokemon Thing</h1>
-        <p>Some explination text about what this does.</p>
+        <h1>Pokémon Stickers</h1>
+        <p>Add Pokémon to any picture.</p>
         <h3>Steps</h3>
         <ol>
-          <li> Choose Selfie</li>
-          <li> Add Pokemon</li>
+          <li> Choose Photo</li>
+          <li> Click to add Pokemon</li>
           <li> Save to your computer</li>
         </ol>
-      </div>
-      <div class='col-md-6 col-sm-12'>
-        <div class="canvas__container">
-          <canvas id="c" width="400" height="300" class="canvas__canvas"></canvas>
-          <img src="" id="mirror" class="canvas__mirror" />
-        </div>
-        <br>
+        <p><span class='label label-warning'>Note</span> There is a height/width limit of <strong>700x700</strong>.</p>
         <div class='row'>
           <div class='col-sm-6'>
             <h3>Choose Selfie</h3>
@@ -30,11 +24,17 @@
           </div>
           <div class='col-sm-6'>
             <h3>Download!</h3>
-            <button href="#" class="btn btn-primary button save" id="btn-download">Download</button>
+            <a href="#" class="btn btn-primary button save" id="btn-download">Download</a>
           </div>
         </div>
       </div>
-      <div class='col-md-6 col-sm-12'>
+      <div class='col-md-8 col-sm-12'>
+        <div class="canvas__container">
+          <canvas id="c" width="400" height="300" class="canvas__canvas"></canvas>
+          <img src="" id="mirror" class="canvas__mirror" />
+        </div>
+      </div>
+      <div class='col-md-4 col-sm-12'>
         <div id="pokemon"></div>
       </div>
     </div>
