@@ -40,6 +40,14 @@ $(function() {
     reader.readAsDataURL(file);
   });
 
+  // Remove on backspace
+  $('body').keyup(function(e){
+     if(e.keyCode == 8 || e.keyCode == 46){ // backspace
+         canvas.getActiveObject().remove();
+     }
+  });
+
+
 
   // The download button - when you click it, it applies the value of the canvas into an image.
   var downloadButton = $('#btn-download');
