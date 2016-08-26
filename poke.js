@@ -33,7 +33,7 @@ $(function() {
 
   $('#pokemon').on('click', '.sprite', function() {
     var id = $(this).attr('data-id');
-    var file = '/pokemon/' + id + '.png';
+    var file = 'pokemon/' + id + '.png';
     fabric.Image.fromURL(file, function (img) {
       var oImg = img.set({left: 0, top: 0, angle: 00,width:img.width, height:img.height});
       oImg.hasBorder = false;
@@ -45,6 +45,6 @@ $(function() {
 
   var pokemon = 493; // Maximum number of pokemon
   for (i = 1; i <= pokemon; i++) {
-    $('#pokemon').append("<img src='/pokemon/"+i+".png' class='sprite' data-id='"+i+"'>");
+    $('#pokemon').append("<img src='pokemon/"+i+".png' class='sprite' data-id='"+i+"'>");
   }
 });
